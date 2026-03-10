@@ -26,6 +26,35 @@ Plug 'mattkubej/jest.nvim'
 use 'mattkubej/jest.nvim'
 ```
 
+### lazy.nvim
+
+```lua
+{
+"mattkubej/jest.nvim",
+  keys = {
+    {
+      "<leader>tr", -- mapped to tr
+      function()
+        -- all options
+        require("nvim-jest").test_project()
+        require("nvim-jest").test_file()
+        require("nvim-jest").test_single()
+        require("nvim-jest").test_coverage()
+      end,
+      desc = "Run Jest (All)",
+    },
+  },
+  opts = {
+    watch = false,
+    jest_cmd = "path/to/jest/command"
+    remote = {
+      host = "user@192.168.10.10",
+      path = "path/to/root/of/project"
+    },
+  },
+}
+```
+
 ## Default configuration
 
 ```lua
